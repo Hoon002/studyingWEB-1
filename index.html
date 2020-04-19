@@ -6,20 +6,20 @@
     <title>Lyrics.com - Welcome</title>
 </head>
 <body>
-    <h1><a href="index.html">Lyrics.com</a></h1>
+    <h1 class="zoom"><a href="index.html">Lyrics.com</a></h1>
     <ul>
         <li><a href= "top.html">Top of the world</a></li>
         <li><a href= "ch_fl.html">Cheapest Flight</a></li>
     </ul>
     <br>
     <p>
-        <button id="a" onclick="a()" type="submit"> Search </button>
+        <button onclick="a()" type="submit"> Search </button>
         <input type="text">
     </p>
 
     <script>
         function a() {
-            open('trap.html')
+            document.querySelectorAll('.zoom').style.backgroundColor = 'black';
         }
     </script>
     <br>
@@ -30,17 +30,6 @@
         contact: dudgs9978@gmail.com<br>
         this site is to study WEB
     </footer>
-    <p>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54748791-2"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-54748791-2');
-        </script>
-
-    </p>
+    <a href="tem.html">New site!</a>
 </body>
 </html>

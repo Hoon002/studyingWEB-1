@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header{
+            background-color:tomato;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .name{
+            color: white;
+            background-color: goldenrod;
+            padding-bottom: 10px;
+        }
+        #btn{
+            background-color: tan;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">Cities</h1>
+    <h2 class="name">Seoul</h2>
+    <h2 class="name">New York</h2>
+    <h2 class="name">Toronto</h2>
+    <button id="btn" onclick="change_mood()">change the mood!!</button>
+
+    <p class="temp">Thx</p>
+    <p class="temp">Di</p>
+    <button onclick="queryTest()">Test it</button>
+
+    <script>
+        presentColor = 0;
+
+        function change_mood() {
+            alert(presentColor)
+            var changer, i;
+            changer = document.querySelectorAll(".name");
+
+            if (presentColor === 0){
+                presentColor += 1;
+                for(i = 0; i < changer.length; i++){
+                    changer[i].style.color = "black";
+                    changer[i].style.backgroundColor = "yellow";
+                }
+            }
+
+            else{
+                presentColor -= 1;
+                for(i = 0; i < changer.length; i++){
+                    changer[i].style.color = "yellow";
+                    changer[i].style.backgroundColor = "black";
+                }
+            }
+            alert("the mood is changed");
+        }
+
+        function queryTest(){
+            var x, i;
+            x = document.querySelectorAll(".temp");
+            alert(typeof(x));
+            for(i = 0; i < x.length; i++){
+                x[i].style.backgroundColor = "aqua";
+                alert('loop')
+            }
+        }
+    </script>
+</body>
+</html>
