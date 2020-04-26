@@ -22,39 +22,47 @@
     </style>
 </head>
 <body>
+
     <h1 id="header"><script>document.write(Date())</script></h1>
     <h2 class="name">Seoul</h2>
     <h2 class="name">New York</h2>
     <h2 class="name">Toronto</h2>
-    <button id="btn" onclick="change_mood()">change the mood!!</button>
+    <button id="btn" onclick="theme('night')">night</button>
+    <button id="btn" onclick="theme('day')">day</button>
+    <button id="btn" onclick="theme('sat')">Saturn</button>
 
     <p class="temp">Thx</p>
     <p class="temp">Di</p>
     <button onclick="queryTest()">Test it</button>
 
     <script>
-        presentColor = 0;
+        function theme(mood) {
+            var target, i;
+            var pallet = [[, ], [, ], [, ]];
+            pallet[0][0] = 'black';
+            pallet[0][1] = 'yellow';
+            pallet[1][0] = 'white';
+            pallet[1][1] = 'tomato';
+            pallet[2][0] = 'navy';
+            pallet[2][1] = 'coral';
 
-        function change_mood() {
-            alert(presentColor)
-            var changer, i;
-            changer = document.querySelectorAll(".name");
-
-            if (presentColor === 0){
-                presentColor += 1;
-                for(i = 0; i < changer.length; i++){
-                    changer[i].style.color = "black";
-                    changer[i].style.backgroundColor = "yellow";
-                }
+            console.log(mood, pallet);
+            if (mood === 'night'){
+                colorPreSet = pallet[0];
+            } else if (mood === 'day'){
+                colorPreSet = pallet[1];
+            } else{
+                colorPreSet = pallet[2];
             }
+            console.log(mood, pallet, colorPreSet);
 
-            else{
-                presentColor -= 1;
-                for(i = 0; i < changer.length; i++){
-                    changer[i].style.color = "yellow";
-                    changer[i].style.backgroundColor = "black";
+            target = document.querySelectorAll(".name");
+
+                for(i = 0; i < target.length; i++){
+                    target[i].style.color = colorPreSet[0];
+                    target[i].style.backgroundColor = colorPreSet[1];
                 }
-            }
+
             alert("the mood is changed");
         }
 
@@ -68,5 +76,7 @@
             }
         }
     </script>
+
+
 </body>
 </html>

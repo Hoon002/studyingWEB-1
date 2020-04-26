@@ -13,13 +13,17 @@
     </ul>
     <br>
     <p>
-        <button onclick="a()" type="submit"> Search </button>
-        <input type="text">
+        <button> Search </button>
+        <input id="keu" type="text">
     </p>
-
     <script>
-        function a() {
-            document.querySelectorAll('.zoom').style.backgroundColor = 'black';
+        var i = 0;
+        var firms = ['Samsung', 'Apple', 'Google', 'Microsoft'];
+        alert(firms.length);
+
+        while(i < firms.length){
+            document.writeln('<a href = "https://www.google.com">'+ firms[i]+'</a><br>');
+            i += 1;
         }
     </script>
     <br>
