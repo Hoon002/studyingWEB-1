@@ -6,10 +6,41 @@
     <title>holy trap!</title>
 </head>
 <body>
-    <h2 style="background-color: brown; color: palegoldenrod;">You just activated my trap card!</h2>
-    <img 
-    src="unnamed.jpg"
-    alt = "trap image"
-    width = "50%"><br>
+    <h2>iterate</h2>
+    <script>
+        var region = {
+            "Teukbyeolsi": ["Seoul"],
+            "si":[
+                "Cheongju",
+                "Cheon'an",
+                "Wonju",
+                "Jeju"
+            ],
+            "gun":[
+                "Boeun",
+                "Okcheon"
+            ],
+            "showAll": function(){
+                this['do'] = ["Deajon", "Ulsan"];
+
+                for(var key in this){
+                    if(key === 'showAll'){
+                        continue
+                    }
+                    
+                    document.write("<h3>"+key+"</h3><ul>");
+
+                for(var i in this[key]){
+                    document.write("<li>"+this[key][i]+"</li>")
+                }
+
+                    document.write("</ul>");
+                }
+            }
+        }
+
+        region.showAll();
+
+    </script>
 </body>
 </html>
